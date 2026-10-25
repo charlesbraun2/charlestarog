@@ -487,10 +487,10 @@ const EDUCATION_DATA = [
   },
   {
     school: "Bachelor of Science in Information Technology",
-    track: "Upcoming 4th Year Student",
+    track: "4th Year Student",
     org: "Pamantasan ng Lungsod ng Valenzuela",
     city: "Valenzuela City",
-    year: "Currently Enrolled",
+    year: "Currently Enrolled | Expected Graduation on 2027",
     logo: "assets/about/education/plv_logo.png"
   }
 ];
