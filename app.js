@@ -428,7 +428,7 @@ function initTypewriter() {
   const textEl = document.getElementById("hero-typewriter-text");
   if (!textEl) return;
 
-  const words = ["Upcoming 4th Year BSIT Student.", "Aspiring Front-end Dev.", "Aspiring UI/UX Designer.", "Graphic Artist.", "Traditional Artist."];
+  const words = ["4th Year BSIT Student.", "Aspiring Front-end Dev.", "Aspiring UI/UX Designer.", "Graphic Artist.", "Traditional Artist."];
   let wordIdx = 0;
   let currentText = "";
   let isDeleting = false;
