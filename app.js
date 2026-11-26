@@ -687,7 +687,7 @@ function renderFilterTabs() {
 
   container.innerHTML = FILTER_TABS.map(t => `
     <button onclick="setProjectFilter('${t.key}')" 
-      class="filter-tab px-4 py-2 rounded-full border border-white/15 text-white/60 font-semibold text-xs md:text-sm tracking-wider cursor-pointer ${activeFilter === t.key ? 'active' : ''}">
+      class="filter-tab px-4 py-2 rounded-full border border-portfolio-red/30 text-portfolio-red font-semibold text-xs md:text-sm tracking-wider cursor-pointer ${activeFilter === t.key ? 'active' : ''}">
       ${t.label}
     </button>
   `).join("");
@@ -746,6 +746,11 @@ function renderFeaturedProject() {
   const hasLive = featuredProject.live;
   const hasView = featuredProject.view;
 
+  // Shared button look (dark outline → fills dark on hover)
+  const btnStyle = `style="border: 1.5px solid #0B2428; background: transparent; color: #0B2428;"
+    onmouseover="this.style.background='#0B2428'; this.style.color='#fff';"
+    onmouseout="this.style.background='transparent'; this.style.color='#0B2428';"`;
+
   container.innerHTML = `
     <div class="flex flex-wrap w-full">
       <!-- Image / Slideshow section -->
@@ -756,15 +761,15 @@ function renderFeaturedProject() {
             : ""
           }
         ></div>
-        
-        <!-- Category Badges (supports multiple) -->
+
+        <!-- Category Badges -->
         <div class="absolute top-4 left-4 z-10 flex gap-1.5 flex-wrap">
-            ${featuredProject.categories.map(cat => `
-              <span class="px-3 py-1 text-[10px] font-extrabold uppercase tracking-widest rounded"
-                    style="background-color: ${TAG_COLOR[cat]}; color: ${TAG_TEXT[cat]};">
-                ${TAG_LABEL[cat]}
-              </span>
-            `).join('')}
+          ${featuredProject.categories.map(cat => `
+            <span class="px-3 py-1 text-[10px] font-extrabold uppercase tracking-widest rounded"
+                  style="background-color: ${TAG_COLOR[cat]}; color: ${TAG_TEXT[cat]};">
+              ${TAG_LABEL[cat]}
+            </span>
+          `).join('')}
         </div>
 
         <!-- Indicators -->
@@ -777,11 +782,11 @@ function renderFeaturedProject() {
           <p class="text-portfolio-teal/60 text-xs tracking-wider mb-1.5">${featuredProject.date}</p>
           <h3 class="font-extrabold text-xl md:text-2xl text-portfolio-dark mb-3">${featuredProject.title}</h3>
           <div class="text-portfolio-dark/85 text-sm leading-relaxed mb-5">${featuredProject.desc}</div>
-          
+
           <!-- Tags list -->
           <div class="flex flex-wrap gap-1.5 mb-6">
             ${featuredProject.tags.map(t => `
-              <span class="px-2.5 py-1 rounded-full bg-portfolio-dark/20 text-portfolio-dark text-xs font-semibold tracking-wider border border-portfolio-green/20">${t}</span>
+              <span class="px-2.5 py-1 rounded-full bg-portfolio-teal/10 text-portfolio-teal text-xs font-semibold tracking-wider border border-portfolio-teal/20">${t}</span>
             `).join("")}
           </div>
         </div>
@@ -789,30 +794,24 @@ function renderFeaturedProject() {
         <!-- Call to Actions -->
         <div class="flex flex-wrap gap-3">
           ${hasLive ? `
-            <a href="${hasLive}" target="_blank" 
-                    class="inline-flex items-center gap-1.5 px-8 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-200"
-                    style="border: 1.5px solid #0B2428; background: transparent; color: #0B2428;"
-                    onmouseover="this.style.background='#0B2428'; this.style.color='#fff';"
-                    onmouseout="this.style.background='transparent'; this.style.color='#0B2428';"
+            <a href="${hasLive}" target="_blank"
+              class="inline-flex items-center gap-1.5 px-8 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-200"
+              ${btnStyle}>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               View System
             </a>
           ` : ""}
           ${hasFigma ? `
-            <a href="${hasFigma}" target="_blank" 
-                    class="inline-flex items-center gap-1.5 px-8 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-200"
-                    style="border: 1.5px solid #0B2428; background: transparent; color: #0B2428;"
-                    onmouseover="this.style.background='#0B2428'; this.style.color='#fff';"
-                    onmouseout="this.style.background='transparent'; this.style.color='#0B2428';">
+            <a href="${hasFigma}" target="_blank"
+              class="inline-flex items-center gap-1.5 px-8 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-200"
+              ${btnStyle}>
               View on Figma
             </a>
           ` : ""}
           ${hasView ? `
-            <button onclick="openGraphicModal(${featuredProject.id})" 
-                      class="px-8 py-2.5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-200"
-                      style="border: 1.5px solid #0B2428; background: transparent; color: #0B2428;"
-                      onmouseover="this.style.background='#0B2428'; this.style.color='#fff';"
-                      onmouseout="this.style.background='transparent'; this.style.color='#0B2428';"
+            <button onclick="openGraphicModal(${featuredProject.id})"
+              class="px-8 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-200"
+              ${btnStyle}>
               View Artwork
             </button>
           ` : ""}
@@ -821,7 +820,6 @@ function renderFeaturedProject() {
     </div>
   `;
 
-  // Start image cycling
   startSlideshow(featuredProject.imgs, featuredProject.title);
 }
 
@@ -834,7 +832,7 @@ function renderOtherProjects() {
 
   if (others.length === 0) {
     grid.innerHTML = `
-      <div class="col-span-full py-8 text-center text-white/35 font-semibold text-xs tracking-wider uppercase">
+      <div class="col-span-full py-8 text-center text-portfolio-teal/50 font-semibold text-xs tracking-wider uppercase">
         No other projects in this category
       </div>
     `;
@@ -844,29 +842,29 @@ function renderOtherProjects() {
   grid.innerHTML = others.map(p => {
     const firstImg = p.imgs && p.imgs[0] && (p.imgs[0].startsWith("assets/") || p.imgs[0].startsWith("/") || p.imgs[0].startsWith("http"));
     return `
-    <div class="proj-card bg-white/5 rounded-2xl overflow-hidden cursor-pointer border border-white/8 flex flex-col justify-between" onclick="handleProjectCardClick(${p.id})">
+    <div class="proj-card bg-gray-50 rounded-2xl overflow-hidden cursor-pointer border border-gray-200 flex flex-col justify-between" onclick="handleProjectCardClick(${p.id})">
       <div class="h-36 relative ${firstImg ? '' : 'shimmer-bg'}">
         ${firstImg
           ? `<img src="${p.imgs[0]}" alt="${p.title}" class="w-full h-full object-cover object-top absolute inset-0">`
           : `<div class="w-full h-full flex items-center justify-center text-center p-3 text-portfolio-cream/40 font-extrabold text-xs uppercase tracking-widest leading-tight">${p.title}</div>`
         }
         <div class="absolute top-3 left-3 flex gap-1 flex-wrap">
-            ${p.categories.map(cat => `
-              <span class="px-2 py-0.5 text-[9px] font-extrabold uppercase tracking-widest rounded"
-                    style="background-color: ${TAG_COLOR[cat]}; color: ${TAG_TEXT[cat]};">
-                ${TAG_LABEL[cat]}
-              </span>
-            `).join('')}
-      </div>
+          ${p.categories.map(cat => `
+            <span class="px-2 py-0.5 text-[9px] font-extrabold uppercase tracking-widest rounded"
+                  style="background-color: ${TAG_COLOR[cat]}; color: ${TAG_TEXT[cat]};">
+              ${TAG_LABEL[cat]}
+            </span>
+          `).join('')}
+        </div>
       </div>
       <div class="p-4 flex flex-col justify-between flex-grow">
         <div>
-          <p class="font-extrabold text-sm text-portfolio-cream mb-1.5">${p.title}</p>
-          <p class="text-[10px] text-white/40 mb-3">${p.date}</p>
+          <p class="font-extrabold text-sm text-portfolio-dark mb-1.5">${p.title}</p>
+          <p class="text-[10px] text-portfolio-teal/60 mb-3">${p.date}</p>
         </div>
         <div class="flex flex-wrap gap-1.5 mt-2">
           ${p.tags.slice(0, 2).map(tag => `
-            <span class="px-2.5 py-1 rounded-full bg-portfolio-teal/20 text-portfolio-green text-xs font-semibold tracking-wider border border-portfolio-green/20">${tag}</span>
+            <span class="px-2.5 py-1 rounded-full bg-portfolio-teal/10 text-portfolio-teal text-xs font-semibold tracking-wider border border-portfolio-teal/20">${tag}</span>
           `).join("")}
         </div>
       </div>
@@ -897,7 +895,7 @@ window.setProjectFilter = function (filterKey) {
 
   if (filtered.length === 0) {
     if (featuredContainer) featuredContainer.innerHTML = `
-      <div class="py-16 text-center text-dark font-semibold text-xs tracking-wider uppercase">
+      <div class="py-16 text-center text-portfolio-teal/50 font-semibold text-xs tracking-wider uppercase">
         No projects in this category yet
       </div>`;
     if (otherGrid) otherGrid.innerHTML = "";
