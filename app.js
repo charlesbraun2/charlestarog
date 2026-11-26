@@ -749,7 +749,7 @@ function renderFeaturedProject() {
   container.innerHTML = `
     <div class="flex flex-wrap w-full">
       <!-- Image / Slideshow section -->
-      <div class="w-full md:w-1/2 relative overflow-hidden bg-black/20 self-stretch min-h-[260px] h-[260px] md:h-[420px]">
+      <div class="w-full md:w-1/2 relative overflow-hidden bg-gray-100 self-stretch min-h-[260px] h-[260px] md:h-[420px]">
         <div id="featured-slideshow-img" class="w-full h-full absolute inset-0"
           ${(featuredProject.categories.includes("graphic") || featuredProject.categories.includes("traditional"))
             ? `onclick="openGraphicModal(${featuredProject.id}, 0)" style="cursor:pointer;"`
@@ -774,14 +774,14 @@ function renderFeaturedProject() {
       <!-- Info Details -->
       <div class="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-between">
         <div>
-          <p class="text-white/40 text-xs tracking-wider mb-1.5">${featuredProject.date}</p>
-          <h3 class="font-extrabold text-xl md:text-2xl text-portfolio-cream mb-3">${featuredProject.title}</h3>
-          <div class="text-white/60 text-sm leading-relaxed mb-5">${featuredProject.desc}</div>
+          <p class="text-portfolio-teal/60 text-xs tracking-wider mb-1.5">${featuredProject.date}</p>
+          <h3 class="font-extrabold text-xl md:text-2xl text-portfolio-dark mb-3">${featuredProject.title}</h3>
+          <div class="text-portfolio-dark/85 text-sm leading-relaxed mb-5">${featuredProject.desc}</div>
           
           <!-- Tags list -->
           <div class="flex flex-wrap gap-1.5 mb-6">
             ${featuredProject.tags.map(t => `
-              <span class="px-2.5 py-1 rounded-full bg-portfolio-teal/20 text-portfolio-green text-xs font-semibold tracking-wider border border-portfolio-green/20">${t}</span>
+              <span class="px-2.5 py-1 rounded-full bg-portfolio-dark/20 text-portfolio-dark text-xs font-semibold tracking-wider border border-portfolio-green/20">${t}</span>
             `).join("")}
           </div>
         </div>
@@ -791,9 +791,9 @@ function renderFeaturedProject() {
           ${hasLive ? `
             <a href="${hasLive}" target="_blank" 
                     class="inline-flex items-center gap-1.5 px-8 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-200"
-                    style="border: 1.5px solid #fff; background: transparent; color: #fff;"
-                    onmouseover="this.style.background='#fff'; this.style.color='#0B2428';"
-                    onmouseout="this.style.background='transparent'; this.style.color='#fff';">
+                    style="border: 1.5px solid #0B2428; background: transparent; color: #0B2428;"
+                    onmouseover="this.style.background='#0B2428'; this.style.color='#fff';"
+                    onmouseout="this.style.background='transparent'; this.style.color='#0B2428';"
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               View System
             </a>
@@ -801,18 +801,18 @@ function renderFeaturedProject() {
           ${hasFigma ? `
             <a href="${hasFigma}" target="_blank" 
                     class="inline-flex items-center gap-1.5 px-8 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-200"
-                    style="border: 1.5px solid #fff; background: transparent; color: #fff;"
-                    onmouseover="this.style.background='#fff'; this.style.color='#0B2428';"
-                    onmouseout="this.style.background='transparent'; this.style.color='#fff';">
+                    style="border: 1.5px solid #0B2428; background: transparent; color: #0B2428;"
+                    onmouseover="this.style.background='#0B2428'; this.style.color='#fff';"
+                    onmouseout="this.style.background='transparent'; this.style.color='#0B2428';">
               View on Figma
             </a>
           ` : ""}
           ${hasView ? `
             <button onclick="openGraphicModal(${featuredProject.id})" 
                       class="px-8 py-2.5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-200"
-                      style="border: 1.5px solid #fff; background: transparent; color: #fff;"
-                      onmouseover="this.style.background='#fff'; this.style.color='#0B2428';"
-                      onmouseout="this.style.background='transparent'; this.style.color='#fff';">
+                      style="border: 1.5px solid #0B2428; background: transparent; color: #0B2428;"
+                      onmouseover="this.style.background='#0B2428'; this.style.color='#fff';"
+                      onmouseout="this.style.background='transparent'; this.style.color='#0B2428';"
               View Artwork
             </button>
           ` : ""}
@@ -897,7 +897,7 @@ window.setProjectFilter = function (filterKey) {
 
   if (filtered.length === 0) {
     if (featuredContainer) featuredContainer.innerHTML = `
-      <div class="py-16 text-center text-white/35 font-semibold text-xs tracking-wider uppercase">
+      <div class="py-16 text-center text-dark font-semibold text-xs tracking-wider uppercase">
         No projects in this category yet
       </div>`;
     if (otherGrid) otherGrid.innerHTML = "";

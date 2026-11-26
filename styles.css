@@ -421,6 +421,19 @@ body {
 }
 
 /* Projects Category tab styling */
+
+.proj-role {
+  display: block;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+  color: rgba(64, 96, 90, 0.7);          /* teal on the white section */
+}
+#modal-overlay-root .proj-role {
+  color: rgba(255, 255, 255, 0.5);       /* stays light in the dark modal */
+}
+
 .filter-tab {
   transition: background-color 0.25s, color 0.25s, border-color 0.25s;
 }
@@ -458,7 +471,7 @@ body {
 
 .proj-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
 }
 
 /* Gallery and Card components styling */
@@ -520,6 +533,15 @@ body {
   /* Projects featured card: stack image above text, give image min-height */
   #featured-project-container > div > div:first-child {
     min-height: 220px;
+  }
+
+  /* Project descriptions on the white Projects section */
+  #featured-project-container span[style*="italic"] {
+  color: rgba(64, 96, 90, 0.7) !important;   /* the "Role:" line → teal */
+  }
+
+  #featured-project-container a[style*="AECC97"] {
+    color: #40605A !important;                 /* "View Reference" links → teal */
   }
 
   /* Seminars carousel: smaller cards on phones */
