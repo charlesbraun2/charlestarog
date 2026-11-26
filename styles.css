@@ -1,3 +1,12 @@
+/* Brand font – Grindy Brush */
+@font-face {
+  font-family: 'GrindyBrush';
+  src: url('assets/font/Grindy%20Brush.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Jost – titles */
 @font-face {
   font-family: 'Jost';
@@ -93,6 +102,12 @@ body {
 }
 
 /* Title font (Jost) */
+/* Brand (logo text only) */
+.font-brush {
+  font-family: 'GrindyBrush', 'Brush Script MT', cursive;
+  letter-spacing: 0.03em;
+}
+
 .font-title {
   font-family: 'Jost', 'Inter', sans-serif;
   font-weight: 500;
@@ -372,6 +387,16 @@ body {
 /* Navigation link active styling */
 .nav-link.active::after {
   right: 0;
+}
+
+/* Header nav: white at top, red once the header turns white */
+#header-nav-container .nav-link {
+  color: var(--white);
+  transition: color 0.3s ease;
+}
+
+#header-nav-container.bg-white .nav-link {
+  color: var(--red);
 }
 
 /* Custom layout classes */
