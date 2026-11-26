@@ -399,6 +399,15 @@ body {
   color: var(--red);
 }
 
+/* Header nav underline: white at top, red once header turns white */
+#header-nav-container .nav-link::after {
+  background: var(--white);
+}
+
+#header-nav-container.bg-white .nav-link::after {
+  background: var(--red);
+}
+
 /* Custom layout classes */
 .tag-pill {
   transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s;

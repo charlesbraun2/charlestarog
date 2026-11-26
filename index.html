@@ -62,27 +62,27 @@
         </span>
       </a>
 
-      <!-- Desktop Navigation links (About > Projects > Certifications > Contact) -->
+      <!-- Desktop Navigation links (About > Certifications > Projects > Experience > Contact) -->
       <nav class="hidden md:flex items-center gap-8">
         <button id="nav-lnk-about" onclick="scrollToSection('about')"
-          class="nav-link font-nav text-base tracking-widest uppercase py-1 border-none bg-none cursor-pointer"
-          >
+          class="nav-link font-nav text-base tracking-widest uppercase py-1 border-none bg-none cursor-pointer">
           About
         </button>
         <button id="nav-lnk-certifications" onclick="scrollToSection('certifications')"
-          class="nav-link font-nav text-base tracking-widest uppercase py-1 border-none bg-none cursor-pointer"
-          >
+          class="nav-link font-nav text-base tracking-widest uppercase py-1 border-none bg-none cursor-pointer">
           Certifications
         </button>
-        <button id="nav-lnk-contact" onclick="scrollToSection('contact')"
-          class="nav-link font-nav text-base tracking-widest uppercase py-1 border-none bg-none cursor-pointer"
-          >
-          Contact
-        </button>
         <button id="nav-lnk-projects" onclick="scrollToSection('projects')"
-          class="nav-link font-nav text-base tracking-widest uppercase py-1 border-none bg-none cursor-pointer"
-          >
+          class="nav-link font-nav text-base tracking-widest uppercase py-1 border-none bg-none cursor-pointer">
           Projects
+        </button>
+        <button id="nav-lnk-experience" onclick="scrollToSection('experience')"
+          class="nav-link font-nav text-base tracking-widest uppercase py-1 border-none bg-none cursor-pointer">
+          Experience
+        </button>
+        <button id="nav-lnk-contact" onclick="scrollToSection('contact')"
+          class="nav-link font-nav text-base tracking-widest uppercase py-1 border-none bg-none cursor-pointer">
+          Contact
         </button>
       </nav>
 
@@ -122,12 +122,15 @@
     <button id="nav-lnk-mob-certifications" onclick="scrollToSection('certifications')"
       class="font-nav text-3xl tracking-wider border-none bg-transparent cursor-pointer"
       style="color: #EB4437;">Certifications</button>
-    <button id="nav-lnk-mob-contact" onclick="scrollToSection('contact')"
-      class="font-nav text-3xl tracking-wider border-none bg-transparent cursor-pointer"
-      style="color: #EB4437;">Contact</button>
     <button id="nav-lnk-mob-projects" onclick="scrollToSection('projects')"
       class="font-nav text-3xl tracking-wider border-none bg-transparent cursor-pointer"
       style="color: #EB4437;">Projects</button>
+    <button id="nav-lnk-mob-experience" onclick="scrollToSection('experience')"
+      class="font-nav text-3xl tracking-wider border-none bg-transparent cursor-pointer"
+      style="color: #EB4437;">Experience</button>
+    <button id="nav-lnk-mob-contact" onclick="scrollToSection('contact')"
+      class="font-nav text-3xl tracking-wider border-none bg-transparent cursor-pointer"
+      style="color: #EB4437;">Contact</button>
   </div>
 
   <main>
@@ -164,18 +167,9 @@
           <div
             class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 -mb-10 md:mb-0 transition-transform duration-300 hover:scale-[1.02]">
             <div class="w-full aspect-[3/4] shimmer-bg flex flex-col items-center justify-center p-6 text-center">
-              <!-- <span class="text-6xl mb-4 animate-bounce">🤵</span>
-              <p class="text-portfolio-cream font-bold text-xs uppercase tracking-widest">Charles Tarog</p>
-              <p class="text-portfolio-green text-[10px] uppercase tracking-wider mt-1">(Place Photo here)</p> -->
               <img src="assets/profile picture/charles.png" alt="Charles Tarog"
                 class="w-full aspect-[3/4] object-cover">
             </div>
-
-            <!-- Float location pill overlay -->
-            <!-- <div
-              class="absolute bottom-6 right-6 bg-portfolio-cream text-portfolio-dark rounded-xl px-4 py-2 text-[10px] md:text-xs font-black shadow-lg animate-float flex items-center gap-1">
-              <span>📍</span> Philippines
-            </div> -->
           </div>
         </div>
 
@@ -244,12 +238,6 @@
               Download Resume
             </a>
           </div>
-
-          <!-- Helper note for resume setup -->
-          <!-- <p class="text-white/30 text-[9px] mt-2.5">
-            💡 Developer Tip: Place your resume PDF named <code class="text-portfolio-red font-mono">resume.pdf</code>
-            in this folder.
-          </p> -->
         </div>
       </div>
 
@@ -293,13 +281,6 @@
               class="w-4 h-4 md:w-5 md:h-5" alt="Tailwind CSS">
             TAILWIND CSS <span class="opacity-40">•</span>
           </span>
-
-          <!-- <span
-            class="text-white font-extrabold text-[10px] md:text-xs tracking-widest uppercase flex items-center gap-2">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-              class="w-4 h-4 md:w-5 md:h-5" alt="React JS">
-            REACT JS <span class="opacity-40">•</span>
-          </span> -->
 
           <span
             class="text-white font-extrabold text-[10px] md:text-xs tracking-widest uppercase flex items-center gap-2">
@@ -364,13 +345,6 @@
             TAILWIND CSS <span class="opacity-40">•</span>
           </span>
 
-          <!-- <span
-            class="text-white font-extrabold text-[10px] md:text-xs tracking-widest uppercase flex items-center gap-2">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-              class="w-4 h-4 md:w-5 md:h-5" alt="React JS">
-            REACT JS <span class="opacity-40">•</span>
-          </span> -->
-
           <span
             class="text-white font-extrabold text-[10px] md:text-xs tracking-widest uppercase flex items-center gap-2">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
@@ -408,10 +382,9 @@
       </div>
     </div>
 
-    <!-- About Section (Vibrant Light BG Theme) -->
+    <!-- ═══════════════ 1. ABOUT ═══════════════ -->
     <section id="about" class="py-20 md:py-28 bg-portfolio-white text-portfolio-black reveal">
       <div class="max-w-6xl mx-auto px-4 md:px-12">
-        <!-- <p class="text-portfolio-red font-black text-xs md:text-sm tracking-[0.2em] uppercase mb-2">Who Am I</p> -->
         <h2 class="font-title text-5xl md:text-6xl text-portfolio-red mb-12">ABOUT</h2>
 
         <!-- Bio Paragraph and Image block -->
@@ -474,7 +447,7 @@
       </div>
     </section>
 
-    <!-- Certifications & Seminars Section (Solid Crimson Red theme) -->
+    <!-- ═══════════════ 2. CERTIFICATIONS ═══════════════ -->
     <section id="certifications" class="py-20 md:py-28 bg-portfolio-red text-portfolio-white reveal">
       <div class="max-w-6xl mx-auto px-4 md:px-12">
         <p class="text-portfolio-cream font-black text-xs md:text-sm tracking-[0.2em] uppercase mb-2">Credentials</p>
@@ -484,7 +457,7 @@
         <div id="certs-grid-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6"></div>
 
         <h2 class="font-title text-5xl md:text-6xl text-white mt-24 mb-9">SEMINARS</h2>
-        <!-- Seminars Carousel (White Outer Container - No text heading) -->
+        <!-- Seminars Carousel -->
         <div class="mt-20 bg-white border border-gray-200/50 rounded-3xl p-6 md:p-10 shadow-2xl relative group">
           <!-- Navigation Buttons -->
           <button id="seminars-prev-btn"
@@ -514,7 +487,80 @@
       </div>
     </section>
 
-    <!-- Contact Me Section (Cream/Light green palette theme) -->
+    <!-- ═══════════════ 3. PROJECTS ═══════════════ -->
+    <section id="projects" class="py-20 md:py-28 bg-portfolio-dark text-portfolio-white reveal">
+      <div class="max-w-6xl mx-auto px-4 md:px-12">
+        <p class="text-portfolio-green font-black text-xs md:text-sm tracking-[0.2em] uppercase mb-2">My Work</p>
+        <h2 class="font-title text-5xl md:text-6xl text-portfolio-cream mb-6">PROJECTS</h2>
+        <p class="text-white/50 text-xs md:text-sm leading-relaxed max-w-xl mb-12">
+          A curated collection of my academic and personal projects built throughout my BSIT journey at PLV. 
+          From front-end systems and UI/UX mockups to graphic design work and traditional artworks — each piece reflects
+          my growth, creativity, and passion for building purposeful digital experiences.
+        </p>
+
+        <!-- Category filter tabs -->
+        <div id="filter-tabs-container" class="flex flex-wrap gap-2.5 mb-10"></div>
+
+        <!-- Dynamic Featured Card container -->
+        <div id="featured-project-container"
+          class="bg-white/5 border border-white/10 rounded-3xl overflow-hidden shadow-2xl mb-12"></div>
+
+        <!-- Other minor projects grid -->
+        <h3 class="text-xs uppercase tracking-widest text-white/40 font-bold mb-6">Other works in this category</h3>
+        <div id="other-projects-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6"></div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════ 4. EXPERIENCE ═══════════════ -->
+    <section id="experience" class="py-20 md:py-28 bg-portfolio-cream text-portfolio-dark reveal">
+      <div class="max-w-6xl mx-auto px-4 md:px-12">
+        <p class="text-portfolio-red font-black text-xs md:text-sm tracking-[0.2em] uppercase mb-2">Work History</p>
+        <h2 class="font-title text-5xl md:text-6xl text-portfolio-teal mb-12">EXPERIENCE</h2>
+
+        <!-- Timeline -->
+        <div class="relative border-l-2 border-portfolio-red/40 pl-6 md:pl-10 flex flex-col gap-10">
+
+          <!-- Experience Item: Internship (duplicate this block to add more entries) -->
+          <div class="relative">
+            <!-- Timeline dot -->
+            <span
+              class="absolute -left-[33px] md:-left-[49px] top-7 w-4 h-4 rounded-full bg-portfolio-red ring-4 ring-portfolio-cream"></span>
+
+            <div
+              class="bg-white rounded-2xl p-6 md:p-8 border border-portfolio-teal/15 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+
+              <!-- Header row: type + org (left) / date (right) -->
+              <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 md:gap-6 mb-6">
+                <div>
+                  <span
+                    class="inline-block bg-portfolio-red text-white font-bold text-[10px] md:text-xs px-2.5 py-0.5 rounded uppercase tracking-widest mb-2">
+                    Internship
+                  </span>
+                  <h3 class="font-extrabold text-lg md:text-xl text-portfolio-dark leading-snug">
+                    Valenzuela City Government – ICT Office
+                  </h3>
+                </div>
+                <p
+                  class="text-portfolio-teal font-bold text-xs md:text-sm tracking-wider uppercase md:text-right md:whitespace-nowrap md:pt-1">
+                  July – October 2026
+                </p>
+              </div>
+
+              <!-- Roles -->
+              <p class="text-portfolio-teal font-black text-[10px] md:text-xs uppercase tracking-widest mb-3">Roles</p>
+              <ul class="list-disc pl-5 space-y-2 text-portfolio-teal/85 font-semibold text-sm leading-relaxed marker:text-portfolio-red">
+                <li>Description placeholder here</li>
+                <!-- <li>Add another role / responsibility here</li> -->
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ 5. CONTACT ═══════════════ -->
     <section id="contact" class="py-20 md:py-28 bg-white text-portfolio-dark reveal">
       <div class="max-w-6xl mx-auto px-4 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
 
@@ -579,7 +625,6 @@
             </div>
           </a>
 
-
           <a href="https://www.facebook.com/charlestarog02" target="_blank"
             class="overflow-hidden contact-card bg-white p-4 rounded-2xl flex items-center gap-3 border border-portfolio-teal/15 shadow-sm text-decoration-none">
             <div
@@ -598,36 +643,10 @@
       </div>
     </section>
 
-    <!-- Projects Section (Dark theme) -->
-    <section id="projects" class="py-20 md:py-28 bg-portfolio-dark text-portfolio-white reveal">
-      <div class="max-w-6xl mx-auto px-4 md:px-12">
-        <p class="text-portfolio-green font-black text-xs md:text-sm tracking-[0.2em] uppercase mb-2">My Work</p>
-        <h2 class="font-title text-5xl md:text-6xl text-portfolio-cream mb-6">PROJECTS</h2>
-        <p class="text-white/50 text-xs md:text-sm leading-relaxed max-w-xl mb-12">
-          A curated collection of my academic and personal projects built throughout my BSIT journey at PLV. 
-          From front-end systems and UI/UX mockups to graphic design work and traditional artworks — each piece reflects
-          my growth, creativity, and passion for building purposeful digital experiences.
-
-        </p>
-
-        <!-- Category filter tabs -->
-        <div id="filter-tabs-container" class="flex flex-wrap gap-2.5 mb-10"></div>
-
-        <!-- Dynamic Featured Card container ("The Big Container") -->
-        <div id="featured-project-container"
-          class="bg-white/5 border border-white/10 rounded-3xl overflow-hidden shadow-2xl mb-12"></div>
-
-        <!-- Other minor projects grid -->
-        <h3 class="text-xs uppercase tracking-widest text-white/40 font-bold mb-6">Other works in this category</h3>
-        <div id="other-projects-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6"></div>
-
-      </div>
-    </section>
-
   </main>
 
   <!-- Footer Section (Arrangement matching header nav links) -->
-  <footer class="bg-white pt-9 px-4 md:px-12 relative z-10 text-portfolio-red">
+  <footer class="bg-white pt-9 px-4 md:px-12 relative z-10 text-portfolio-red border-t border-portfolio-teal/10">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row flex-wrap justify-center md:justify-between items-center md:items-start gap-10 md:gap-12">
 
       <!-- Left: Brand + Tagline + Social Icons -->
@@ -635,55 +654,54 @@
         <div class="font-brush text-3xl text-portfolio-red mb-1">CHARL.ES</div>
         <p class="text-portfolio-red text-xs font-sans font-semibold tracking-wider my-3">Let's Stay Connected!</p>
 
-
         <div class="flex gap-2.5 mt-2">
-        <a href="https://www.facebook.com/charlestarog02" target="_blank"
-          class="w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200 hover:-translate-y-1 hover:scale-110"
-          style="background-color: #EB4437;"
-          onmouseover="this.style.backgroundColor='#c0392b';"
-          onmouseout="this.style.backgroundColor='#EB4437';">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
-            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-          </svg>
-        </a>
+          <a href="https://www.facebook.com/charlestarog02" target="_blank"
+            class="w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200 hover:-translate-y-1 hover:scale-110"
+            style="background-color: #EB4437;"
+            onmouseover="this.style.backgroundColor='#c0392b';"
+            onmouseout="this.style.backgroundColor='#EB4437';">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+          </a>
 
-        <a href="mailto:charlestarog02@gmail.com"
-          class="w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200 hover:-translate-y-1 hover:scale-110"
-          style="background-color: #EB4437;"
-          onmouseover="this.style.backgroundColor='#c0392b';"
-          onmouseout="this.style.backgroundColor='#EB4437';">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="4" width="20" height="16" rx="2" />
-            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-          </svg>
-        </a>
+          <a href="mailto:charlestarog02@gmail.com"
+            class="w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200 hover:-translate-y-1 hover:scale-110"
+            style="background-color: #EB4437;"
+            onmouseover="this.style.backgroundColor='#c0392b';"
+            onmouseout="this.style.backgroundColor='#EB4437';">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+          </a>
 
-        <a href="https://www.linkedin.com/in/charlestarog02" target="_blank"
-          class="w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200 hover:-translate-y-1 hover:scale-110"
-          style="background-color: #EB4437;"
-          onmouseover="this.style.backgroundColor='#c0392b';"
-          onmouseout="this.style.backgroundColor='#EB4437';">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-            <rect x="2" y="9" width="4" height="12" />
-            <circle cx="4" cy="4" r="2" />
-          </svg>
-        </a>
+          <a href="https://www.linkedin.com/in/charlestarog02" target="_blank"
+            class="w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200 hover:-translate-y-1 hover:scale-110"
+            style="background-color: #EB4437;"
+            onmouseover="this.style.backgroundColor='#c0392b';"
+            onmouseout="this.style.backgroundColor='#EB4437';">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </a>
 
-        <a href="https://github.com/charlesbraun2" target="_blank"
-          class="w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200 hover:-translate-y-1 hover:scale-110"
-          style="background-color: #EB4437;"
-          onmouseover="this.style.backgroundColor='#c0392b';"
-          onmouseout="this.style.backgroundColor='#EB4437';">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-          </svg>
-        </a>
+          <a href="https://github.com/charlesbraun2" target="_blank"
+            class="w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200 hover:-translate-y-1 hover:scale-110"
+            style="background-color: #EB4437;"
+            onmouseover="this.style.backgroundColor='#c0392b';"
+            onmouseout="this.style.backgroundColor='#EB4437';">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+            </svg>
+          </a>
+        </div>
       </div>
-      </div>
 
-      <!-- Center: Navigation -->
+      <!-- Center: Navigation (same order as header) -->
       <div class="flex flex-col items-center">
         <nav class="flex flex-col gap-2.5 items-center">
           <button onclick="scrollToSection('about')"
@@ -692,12 +710,15 @@
           <button onclick="scrollToSection('certifications')"
             class="nav-link relative font-nav text-2xl border-none bg-transparent cursor-pointer opacity-100 transition-opacity"
             style="color: #EB4437;">Certifications</button>
-          <button onclick="scrollToSection('contact')"
-            class="nav-link relative font-nav text-2xl border-none bg-transparent cursor-pointer opacity-100 transition-opacity"
-            style="color: #EB4437;">Contact</button>
           <button onclick="scrollToSection('projects')"
             class="nav-link relative font-nav text-2xl border-none bg-transparent cursor-pointer opacity-100 transition-opacity"
             style="color: #EB4437;">Projects</button>
+          <button onclick="scrollToSection('experience')"
+            class="nav-link relative font-nav text-2xl border-none bg-transparent cursor-pointer opacity-100 transition-opacity"
+            style="color: #EB4437;">Experience</button>
+          <button onclick="scrollToSection('contact')"
+            class="nav-link relative font-nav text-2xl border-none bg-transparent cursor-pointer opacity-100 transition-opacity"
+            style="color: #EB4437;">Contact</button>
         </nav>
       </div>
 
@@ -716,7 +737,6 @@
       </p>
     </div>
   </footer>
-  
 
   <!-- Fixed Back to Top Button -->
   <button id="back-to-top-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="back-top hidden"

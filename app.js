@@ -1302,7 +1302,7 @@ function initScrollTrackers() {
 }
 
 function highlightNavOnScroll() {
-  const sections = ["about", "projects", "certifications", "contact"];
+  const sections = ["about", "certifications", "projects", "experience", "contact"];
   const scrollPos = window.scrollY + 120;
 
   sections.forEach(secId => {
